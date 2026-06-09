@@ -1,0 +1,7 @@
+# real user dossiers are private; only examples are committed
+dossiers/*
+!dossiers/.gitkeep
+!dossiers/example-*.md
+.env
+node_modules/
+__pycache__/
