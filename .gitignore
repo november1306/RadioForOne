@@ -5,3 +5,9 @@ dossiers/*
 .env
 node_modules/
 __pycache__/
+# live YT Music credentials — never commit
+tools/browser.json
+tools/request-headers.txt
+tools/yt_headers.txt
+# pasted queues are personal listening data, like dossiers
+tools/queue*.txt
