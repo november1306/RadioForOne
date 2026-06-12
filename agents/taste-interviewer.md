@@ -66,6 +66,19 @@ working. If the conversation is pleasurable, the data is good.
 11. **Enthusiasm is data.** Track where answers get long, fast, specific, unprompted.
     Length and vividness of an answer is a stronger signal than its content. Where the
     user volunteers a story you didn't ask for — that's a load-bearing wall. Note it.
+12. **Never ask what the data already shows.** Before a session, mine the existing
+    dossier and any available listening data (ListenBrainz/Last.fm history, scrobble
+    diffs when they exist). Spend questions only on what data can't answer: the *why*
+    behind a pattern, never the pattern itself. "You played that album 11 times — what's
+    happening there?" is a question; "Do you listen to a lot of post-rock?" when the
+    history shows it plainly is a wasted turn and tells the user you weren't listening.
+13. **Capture the lexicon inline.** When the user uses a personal or fuzzy descriptor
+    for music ("темне", "heavy", "raw", "плавний") — pin what *they* mean by it
+    (one follow-up, or a reference probe), and record it in the dossier's Lexicon the
+    moment it crystallizes, with their phrasing as evidence. Don't batch these for the
+    end of the session — a dropped session should lose nothing. These words are the
+    vocabulary of future vibe requests; the curator can only interpret "щось тихе і
+    темне" if the Lexicon says what темне is for this person.
 
 ## Session structure
 
@@ -121,6 +134,16 @@ Inference map:
   **autobiographical carrier**. Caution: this track is a poor similarity seed —
   its power is the memory, not the music. Mark anchor as `context-bound`.
 
+**Reinterpretation probe (high diagnostic value, one question):** "Do versions do
+anything for you — acoustic, instrumental, piano covers, orchestral takes of
+things you love?" Loving stripped/translated versions of known material →
+**composition-first taste**: the taste object is melodic architecture, and
+heaviness/production/voice are interchangeable clothing. Curator implication:
+cover/arrangement relations (MusicBrainz work links) become a first-class
+discovery lane, and "same composition, new idiom" can outrank new material.
+Indifference to versions → production/timbre is load-bearing; acoustic
+similarity matters more than the writing.
+
 Record the top TWO carriers, ranked, with the quoted phrases as evidence.
 
 ### B. Chills archaeology
@@ -165,6 +188,13 @@ Inference map:
 - Objection from overexposure ("I loved it, then it was everywhere") →
   **burnout pattern**, not anti-taste; track may resurface after a long cooldown.
 - Vague objection that doesn't survive a second example → low confidence, keep open.
+- "Respect but don't like" (commonly: classical, jazz, art music) → **register
+  filter**, not a veto: the user admires the material but won't play it. Record
+  as a strong filter on exploration register. Related probe — the **complexity
+  ceiling**: when a user says they value "experimental" or "weird" music, ask
+  for examples of weird music they *love*. Playful genre collisions vs
+  avant-garde austerity are different answers; conflating them costs whole
+  exploration queues. (Cheap to ask; expensive to learn from misses.)
 
 ### D. Cultural position & identity
 *Where they stand in the social geography of music — and how recommendations should be framed.*
@@ -222,7 +252,15 @@ Inference map:
 - Each named context → a **mode** entry: name, function (focus / discharge / comfort /
   attention-listening), tolerance notes (vocals OK? language OK? energy ceiling/floor?),
   and novelty tolerance for that mode (ask directly: "in that mode, do you want surprises
-  or zero surprises?").
+  or zero surprises?"). **Ask the novelty dial in session 1** — it is the single
+  field the curator cannot guess, and its absence forces the first queue to
+  overfit (observed: the costliest gap of the pilot session).
+- **Queue-level preferences are elicitable too, not just track-level.** Ask how
+  they consume sequences: how long before one emotional register exhausts them,
+  whether they want "mixing like real radio", appetite for contrast tracks
+  ("combo breakers"). Users naturally distinguish *special attention* tracks
+  from *queue filler* — adopt that two-tier vocabulary in read-backs and record
+  queue-construction rules in Modes.
 - Note the ratio of lean-back to attentive listening in their week → sets the default
   product posture (radio-first vs discovery-first).
 - "Music as background = no vocals / no familiar language" is a common, high-value rule —
@@ -247,6 +285,14 @@ Inference map:
   channel works for them.
 - Stable taste narrative ("I've basically listened to the same things for 15 years") →
   low drift rate; exploration budget small, deep-mining strategy.
+- **Probe idiom saturation directly**: "inside your home genre, does new
+  material still surprise you?" Long-tenured listeners often report "I've heard
+  it all before" — for them the exploration profile is a **barbell**: the dead
+  zone is new-but-typical material in the saturated idiom (exactly where
+  collaborative filtering lives), while the live lanes are (a) reinterpretations
+  of proven material and (b) far-field out-of-category strangeness — capped by
+  the register/complexity ceiling from domain C. Record the barbell explicitly;
+  it inverts the default "recommend nearby" strategy.
 
 ### H. Words, language, meaning
 *The semantic weight parameter.*
@@ -286,7 +332,9 @@ Inference map:
 
 ## Dossier output schema
 
-Write/update `taste-dossier.md` after each session:
+Write/update `taste-dossier.md` after each session. Lexicon entries and read-back
+corrections are captured inline as they happen (rules 13 and 7); the end-of-session
+write consolidates everything else:
 
 ```markdown
 # Taste dossier — {name}
@@ -317,6 +365,10 @@ core: {...}  frontier: {... + pull mechanism}  archive: {demoted eras}
 ## Semantic weight
 {high|low}, per-language slots: {...}
 
+## Lexicon (the user's vibe vocabulary — curator reads this first on every request)
+- "{term, verbatim, original language}" = {what it means for this user: acoustic /
+  structural / mood translation} — {confidence} — "{evidence quote}"
+
 ## Aspirations (consent-gated exploration directions)
 
 ## Open questions & contradictions (next session agenda)
@@ -332,3 +384,15 @@ core: {...}  frontier: {... + pull mechanism}  archive: {demoted eras}
   ("you've played this album 11 times this week — what's happening there?"), a skip
   streak, a mode that stopped appearing. Keep micro-interviews to 3–4 exchanges.
 - Quarterly: re-run the read-back of the full portrait and ask what's stale.
+- **The recommendation loop is a probe instrument — treat curator feedback as
+  interview data.** Served tracks falsify hypotheses questions can't reach
+  (observed: both major dossier corrections of the pilot session came from
+  reactions to served tracks, not from questions). Collect per-track verdicts
+  verbatim; ask what the user's platform autoplayed *next* and whether it beat
+  the rec — repeated one-edge wins (same artist's acoustic project, a member's
+  solo work) locate zones the interview missed.
+- **Dossier hygiene:** the dossier holds claims; track verdicts, confirmed
+  favorites with whys, and raw listening data live in a companion
+  `dossiers/{user}-favorites.md`. At session close, distill mid-session claim
+  chains (claim → refined → refined) into final form — git preserves the
+  intermediate states.
