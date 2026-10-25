@@ -36,3 +36,19 @@ gates agent revisions. DM-specific facts live in `dossiers/dm.md`.
     *delivery inside rock/metal* is era identity; rap as the *carrying genre* is
     the separate, low-affinity case. Scope genre vetoes to the carrier, not the
     vocal technique.
+
+## Folded into `agents/taste-interviewer.md` (founder-directed live, no L1 run)
+
+- **Formative path moved to session 1, second move.** Founder: "this input alone
+  is enough to immediately hop on acceptance plateau and it should be properly
+  utilized in interviewer." DM's path (nu-metal + dad's Motörhead/Judas Priest →
+  Gothenburg at 16–20) was available since day one but unasked until session 5.
+- **Domain G: the formative scene sets the personal genre-average** (founders stay
+  favorites, later neighbors read as "all the same"; origin can be blind — DM
+  liked Swedish bands for years before noticing they were Swedish), and
+  **satellites** mapped separately with their entry stories (DM: downtempo/
+  trip-hop, piano & instrumental, game/film scores, synthwave/electronic, dark
+  cabaret, Ukrainian scene). The center reaches the ~0.65 plateau; peaks live in
+  satellites and near-center outliers.
+- **Eval debt:** L1 assertion that session-1 dossiers record a formative scene +
+  age window (see `evals/personas/README.md`).

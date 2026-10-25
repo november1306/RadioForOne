@@ -5,9 +5,9 @@
 #   tools/import-yt-playlist.sh <playlist-url> [output-file]
 #
 # Prints "title | uploader" per track (UTF-8). If output-file is given, writes
-# there instead of stdout. Paste the result into the dossier's
-# "Raw listening data" appendix with date + source URL — it is evidence,
-# not claims (see agents/taste-interviewer.md, rule 12).
+# there instead of stdout. Paste the result into the "Raw listening data"
+# appendix of dossiers/{user}-favorites.md with date + source URL — it is
+# evidence, not claims (see agents/taste-interviewer.md, rule 12 and Dossier).
 #
 # Caveats:
 #   - Works for public/unlisted playlists. Private ones need
