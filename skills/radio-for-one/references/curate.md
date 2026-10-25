@@ -43,6 +43,13 @@ the dossier's preferred strategy ("no known artists" means no known *artists*, n
 no known tracks). A mid-session satiation ("sick of electronics today") lasts one
 queue unless renewed.
 
+**Conflicts resolve by weight** ([dossier.md](dossier.md), Claims). When claims, or
+a claim and the request, pull different ways: `must` > an explicit constraint in
+today's request > `strong` > `confirmed` > `tentative`. A constraint is explicit
+when the request names it ("only ambient tonight"); a mood ("night chill") shapes
+the opener and the peaks while `strong` rules such as spread still hold around it.
+Ungraded claims count as `confirmed`.
+
 **Familiarity is checked, not assumed.** Check every discovery candidate against
 the whole dossier. When unsure, treat it as familiar. In a discovery queue, invite
 the listener to flag any artist they already know, and swap it.

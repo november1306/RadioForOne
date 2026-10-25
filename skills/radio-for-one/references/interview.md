@@ -306,7 +306,9 @@ recognition and read-back material, never a similarity seed.
 ## Inference principles
 
 1. **Every conclusion is a hypothesis**, recorded in the claim format of
-   [dossier.md](dossier.md).
+   [dossier.md](dossier.md), with a weight. When a preference sounds strong, ask
+   how much it matters ("dealbreaker, or just usually?"); record `must` only on the
+   listener's own absolute words.
 2. **Stated vs demonstrated.** "I love discovering new music" (stated) vs three
    vivid chills stories (demonstrated). Demonstrated drives the model; a
    conflicting stated preference becomes an **aspiration**, used only with consent.

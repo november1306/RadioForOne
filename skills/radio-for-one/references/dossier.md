@@ -9,14 +9,29 @@ One markdown file per listener, owned by them. Two halves:
 
 ## Claims
 
-Every claim carries its evidence:
+Every claim carries its weight and its evidence:
 
 ```
-- {claim} — {low|med|high} — "{verbatim quote}" — {untested|survived-probe|user-confirmed|user-corrected}
+- [{must|strong|confirmed|tentative}] {claim} — {low|med|high} — "{verbatim quote}" — {untested|survived-probe|user-confirmed|user-corrected}
 ```
 
-High confidence requires a surviving disconfirmation probe or a read-back
-confirmation. Keep quotes in the listener's original language and spelling.
+**Confidence** (low/med/high) is how sure you are the claim is true. High
+confidence requires a surviving disconfirmation probe or a read-back confirmation.
+Keep quotes in the listener's original language and spelling.
+
+**Weight** is how hard the claim binds when it conflicts with something else:
+
+| Weight      | Meaning                                                      | Who can set it |
+| ----------- | ------------------------------------------------------------ | -------------- |
+| `must`      | Never broken, not even by a request.                         | Only the listener, stated as absolute ("never", a veto, "I don't like X at all"). |
+| `strong`    | Holds unless today's request explicitly overrides it.        | The listener's emphasis, or repeated verdicts pointing one way. |
+| `confirmed` | The default for a supported claim; yields to the above.      | Evidence. |
+| `tentative` | A tiebreaker only; legal to test on purpose.                 | Anything low-confidence, or a minor preference. |
+
+The two are independent: "likes strong openers" can be certain yet `tentative`,
+and a `strong` claim can be young. A low-confidence claim is at most `tentative`.
+Grade the claims that steer selection: Modes, Queue rules, Exploration lanes,
+Vetoes, Cultural position.
 
 ## Updating
 
@@ -46,18 +61,21 @@ updated: {date} · sessions: {n} · language: {UA/EN/...} · coverage: {domains 
 composition-first: {yes | no | untested}
 
 ## Modes
-- **{name}** — function · tolerances (vocals, language, energy) · novelty dial · queue rules
+- [{weight}] **{name}** — function · tolerances (vocals, language, energy) · novelty dial · queue rules
 
 ## Queue rules
-{listener-specific queue construction: discovery floor %, spread, pacing, two-tier vocabulary}
+- [{weight}] {listener-specific queue construction: discovery floor %, spread, pacing, two-tier vocabulary} — {conf} — "{quote}"
 
 ## Exploration profile
 shape: {nearby | barbell} · chills profile: {deep-miner | explorer | low-chills}
 register / complexity ceiling: {...}
-live lanes: {...} · weak lanes: {...}
+live lanes:
+- [{weight}] {lane} — {conf} — "{quote}"
+weak lanes:
+- [{weight}] {lane} — {conf} — "{quote}"
 
 ## Vetoes & filters
-- {rule} — {acoustic | identity | burnout | register | artist} — {conf} — "{quote}"
+- [{weight}] {rule} — {acoustic | identity | burnout | register | artist} — {conf} — "{quote}"
 
 ## Cultural position
 framing_style: {distinction | autonomous | scene-navigator | pure-sound}
