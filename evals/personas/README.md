@@ -14,3 +14,7 @@ Required coverage (per docs/prd.md §9): 5–8 personas including
 
 Runner (to build): interviewer vs persona, unattended, 1 session → extracted
 dossier → field assertions + LLM-as-judge vs ground truth → report.
+
+Required field assertions (beyond carriers / framing_style / vetoes / modes):
+- session-1 dossier records a formative scene (`center`) with an age window
+- session-1 dossier records a novelty dial for at least the main mode
