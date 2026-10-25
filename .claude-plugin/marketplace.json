@@ -1,0 +1,17 @@
+{
+  "name": "radio-for-one",
+  "owner": {
+    "name": "november1306",
+    "url": "https://github.com/november1306"
+  },
+  "description": "Radio for One — a music radio with an audience of exactly one listener.",
+  "plugins": [
+    {
+      "name": "radio-for-one",
+      "source": "./",
+      "description": "A personal music radio that learns your taste and serves 10-track queues with a why for every track.",
+      "category": "lifestyle",
+      "keywords": ["music", "recommendations", "playlist"]
+    }
+  ]
+}

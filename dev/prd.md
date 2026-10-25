@@ -1,5 +1,8 @@
 # PRD / Design Doc — Personal Radio (working title)
 
+> Status 2026-10-25: the interviewer and curator now ship together as one skill,
+> `skills/radio-for-one/`. Paths below (agents/, resolver/) describe the original plan.
+
 status: draft v0.1 · owner: DM · scope: high-level
 
 ## 1. One-liner

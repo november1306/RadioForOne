@@ -2,43 +2,52 @@
 
 ## What this project is
 
-A chat-first personal radio: an interviewer agent builds a per-user taste dossier
-through conversation; a curator agent turns the dossier + a vibe request into an
-annotated track queue. Read `docs/prd.md` before non-trivial work — it defines the
-blocks, the roadmap gates, and the three-layer eval plan (L1 interviewer personas,
-L2 curator golden-dossiers, L3 human blind tests).
+A personal radio, shipped as one installable skill (`skills/radio-for-one/`) for
+Claude Code, claude.ai and Claude desktop. It interviews a listener and reads their
+favorites into a taste dossier, then serves 10-track queues with a *why* per track
+and learns from reactions. `dev/prd.md` holds the product thinking, roadmap gates
+and the three-layer eval plan (L1 interviewer personas, L2 curator golden dossiers,
+L3 human blind tests).
+
+## Layout
+
+- `skills/radio-for-one/` — **the product**. Everything here ships to users, so it
+  stays general: no founder data, no session history, no dated changelogs.
+  `SKILL.md` routes; `references/` hold the method (interview, favorites, curate,
+  dossier format).
+- `dev/` — founder workspace: PRD, `history/` (past session learnings), `tools/`
+  (listen-link, playlist import), `evals/`, `tests/`.
+- `dossiers/` — real listener dossiers, gitignored. The founder's is
+  `dossiers/dm.md`; when running the skill in this repo, use it.
 
 ## Conventions
 
-- **Prompts are code.** Agent definitions live in `agents/*.md` with YAML
-  frontmatter (Claude Code skill format). Any change to an agent must run the
-  relevant eval suite before merge. No "small prompt tweaks" outside this rule.
-- **Dossiers are markdown, user-owned, evidence-bearing.** Every claim in a dossier
-  carries confidence + verbatim evidence quote + status, per the schema in
-  `agents/taste-interviewer.md`. Never silently rewrite a user's dossier — append
-  and date.
+- **Learnings go to the right home.** A lesson about one listener goes into their
+  dossier. A lesson that holds for any listener becomes a rule in the matching
+  reference file, written in its current form — git keeps the history.
+- **Prompts are code.** A change to the skill should run the relevant eval suite
+  before merge. Until L1/L2 exist, the founder's explicit go-ahead in chat stands
+  in for it; say which suite would have covered the change.
+- **Dossiers are markdown, user-owned, evidence-bearing.** Format and update rules:
+  `skills/radio-for-one/references/dossier.md`.
 - **Open data only feeds the model.** MusicBrainz / ListenBrainz / Last.fm.
   Spotify content must never be ingested into prompts, dossiers, or evals
   (Developer Policy prohibits ML/profile use). Spotify may appear only as a
-  user-authorized playback adapter behind `resolver/`.
-- **Resolver = hallucination gate.** No track string reaches a user without
-  resolving to a MusicBrainz ID. Hallucination rate is a tracked CI metric.
-- **Language:** user-facing agents mirror the user (UA/EN). Code and docs in English.
+  user-authorized playback adapter.
+- **Every served track is verified** (curate.md, Verification).
+- **Language:** the skill mirrors the listener (UA/EN). Code and docs in English.
+- **Tests:** `python -m unittest discover dev/tests`. Package for claude.ai:
+  `bash dev/package-skill.sh`.
 
-## Current focus (pre-M0 → M0)
+## Current focus (M0)
 
-1. `agents/curator.md` — draft the suggester. Inputs: dossier + vibe request.
-   Output: queue of N tracks, each with a one-line *why* derived from dossier
-   fields, framed per `framing_style`. The inference maps in the interviewer's
-   dossier schema were written to feed this agent directly.
-2. `evals/personas/` — L1 harness: 5–8 synthetic listener personas, each a hidden
-   ground-truth dossier + roleplay instructions. Include one terse/low-effort
-   persona and one eager-to-please persona (the two failure modes of elicitation).
-   Runner: interviewer vs persona unattended → extracted dossier → field-level
-   assertions + LLM-as-judge vs ground truth.
-3. M0 gate is HUMAN, not automated: founder + two friends interviewed, dossiers
-   blind-matched to their humans. Do not build Telegram/hosting/resolver until
-   this gate passes (see prd.md §11).
+1. Publish the skill and dogfood it: founder + two friends install it, get
+   interviewed, and use the queues.
+2. M0 gate is HUMAN, not automated: the three dossiers blind-matched to their
+   humans. Do not build Telegram/hosting/resolver infrastructure until this gate
+   passes (see `dev/prd.md` §11).
+3. Next after the gate: a click-to-listen radio link (prototype in
+   `dev/tools/make_listen_link.py`).
 
 ## Scope guard (standing instruction from the founder)
 

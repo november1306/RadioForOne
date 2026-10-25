@@ -1,13 +1,12 @@
-# real user dossiers are private; only examples are committed
+# real listener dossiers are private; only examples are committed
 dossiers/*
 !dossiers/.gitkeep
 !dossiers/example-*.md
 .env
 node_modules/
 __pycache__/
+dist/
 # live YT Music credentials — never commit
-tools/browser.json
-tools/request-headers.txt
-tools/yt_headers.txt
+tools/
 # pasted queues are personal listening data, like dossiers
-tools/queue*.txt
+dev/tools/queue*.txt
