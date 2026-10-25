@@ -2,11 +2,11 @@
 
 Each persona = one file with two sections:
 1. **Ground-truth dossier** (hidden from the interviewer) — filled per the schema
-   in agents/taste-interviewer.md: carriers, framing_style, vetoes, modes.
+   in skills/radio-for-one/references/dossier.md: carriers, framing_style, vetoes, modes.
 2. **Roleplay instructions** — how this listener talks: vocabulary, language (UA/EN),
    verbosity, evasions.
 
-Required coverage (per docs/prd.md §9): 5–8 personas including
+Required coverage (per dev/prd.md §9): 5–8 personas including
 - one terse / low-effort persona
 - one eager-to-please persona (agrees with every synthesis)
 - at least one UA-language persona

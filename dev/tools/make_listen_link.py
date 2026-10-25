@@ -3,7 +3,7 @@
 no account, no playlist created: youtube.com/watch_videos?video_ids=...
 makes a temporary anonymous playlist (max 50 tracks).
 
-Usage: python tools/make_listen_link.py queue.txt
+Usage: python dev/tools/make_listen_link.py queue.txt
 
 Accepts two line formats, auto-detected per line (UTF-8):
   Artist|Title                      — same as mb_resolve.py
@@ -72,7 +72,7 @@ def pick(yt: YTMusic, artist: str, title: str):
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
     if len(sys.argv) != 2:
-        sys.exit("usage: python tools/make_listen_link.py queue.txt")
+        sys.exit("usage: python dev/tools/make_listen_link.py queue.txt")
     lines = pathlib.Path(sys.argv[1]).read_text(encoding="utf-8").splitlines()
     queue = parse_queue(lines)
     if len(queue) > MAX_IDS:

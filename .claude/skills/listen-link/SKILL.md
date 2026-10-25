@@ -1,6 +1,6 @@
 ---
 name: listen-link
-description: Turn a curator queue (pasted text or file) into one verified click-to-listen YouTube link via tools/make_listen_link.py, rescuing any mismatched tracks. Use when the user wants to listen to a suggested queue.
+description: Turn a curator queue (pasted text or file) into one verified click-to-listen YouTube link via dev/tools/make_listen_link.py, rescuing any mismatched tracks. Use when the user wants to listen to a suggested queue.
 ---
 
 Produce a single `youtube.com/watch_videos?video_ids=...` link (temporary
@@ -11,10 +11,10 @@ rows it flags.
 ## Procedure
 
 1. **Input.** If the argument is a file path, use it. If the user pasted a
-   queue, save it *verbatim* to `tools/queue-YYYY-MM-DD.txt` — the script
+   queue, save it *verbatim* to `dev/tools/queue-YYYY-MM-DD.txt` — the script
    parses curator output as-is (numbering, ★, `· annotations`, stray prose,
    duplicated paste tails are all handled). Do not reformat by hand.
-2. **Run** `python tools/make_listen_link.py <file>`.
+2. **Run** `python dev/tools/make_listen_link.py <file>`.
 3. **All rows `OK`** → verify and deliver (step 6).
 4. **Rows marked `??` or `MISS`** — the search hit a different title or
    nothing. Rescue each one:
@@ -45,6 +45,6 @@ rows it flags.
 ## Boundaries
 
 - This is listening tooling for the founder's own queue reviews. It is NOT
-  the resolver/hallucination gate (`tools/mb_resolve.py`) and must not be
+  the resolver/hallucination gate (`verify_tracks.py` in the skill) and must not be
   presented as verification that a curator suggestion is real.
 - Never create playlists in YT Music / any account for this workflow.
