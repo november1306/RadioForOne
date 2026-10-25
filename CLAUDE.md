@@ -54,3 +54,17 @@ wearing a suit.
   for You" (see README founding myth — keep it intact).
 - Parked ideas (do not develop unprompted): Threads outreach agent; NeoPromin
   (separate product); embedding/ML pipeline (only if L2 evals plateau).
+
+## Agent skills
+
+### Issue tracker
+
+Issues live in GitHub Issues on november1306/RadioForOne (via `gh`). See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Default five-role vocabulary: needs-triage, needs-info, ready-for-agent, ready-for-human, wontfix. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: one `CONTEXT.md` + `docs/adr/` at the repo root (created lazily). See `docs/agents/domain.md`.
