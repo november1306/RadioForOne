@@ -27,10 +27,15 @@ On older Claude Code versions, add the marketplace first:
 
 **claude.ai and Claude desktop**
 
-1. Download `radio-for-one.zip` from the
-   [latest release](https://github.com/november1306/RadioForOne/releases), or build
-   it with `bash dev/package-skill.sh`.
-2. Settings → Capabilities → Skills → Upload skill, and pick the zip.
+Plugins need a paid plan (Pro, Max, Team or Enterprise).
+
+1. Open **Customize** in the sidebar → **Plugins** tab.
+2. **Add** → **Add marketplace** → **Add from a repository**, and enter
+   `november1306/RadioForOne`.
+3. Open **Discover**, pick **radio-for-one**, and click **Add**.
+
+Without plugins (free plan), upload the skill alone: build the zip with
+`bash dev/package-skill.sh`, then Settings → Capabilities → Skills → Upload skill.
 
 ## Use
 
