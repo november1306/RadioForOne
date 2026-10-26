@@ -1,6 +1,5 @@
 {
   "name": "radio-for-one",
-  "version": "0.1.0",
   "description": "A personal music radio that learns your taste through conversation and your favorites, then serves 10-track queues with a why for every track.",
   "author": {
     "name": "november1306",
@@ -8,6 +7,14 @@
   },
   "repository": "https://github.com/november1306/RadioForOne",
   "license": "MIT",
-  "keywords": ["music", "recommendations", "playlist", "radio", "taste"],
-  "skills": ["./skills/radio-for-one"]
+  "keywords": [
+    "music",
+    "recommendations",
+    "playlist",
+    "radio",
+    "taste"
+  ],
+  "skills": [
+    "./skills/radio-for-one"
+  ]
 }

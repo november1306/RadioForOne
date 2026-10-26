@@ -45,12 +45,13 @@ favorites you paste, and serves your first queue.
 
 **Where your dossier lives**
 
-- Claude Code: `~/.radio-for-one/<name>.md`.
-- claude.ai / Claude desktop chat: at the end of a conversation you get the updated
-  dossier as a file. Attach it next time, or add it to a Project so it loads
-  automatically.
+One document holds everything: your profile and the log of every queue and
+reaction. It is a Claude Doc called `Radio for One — <name>` in your Claude
+account, with a Profile tab and an Evidence tab, so the same radio opens on web,
+desktop and phone. It needs the Claude Docs connector; without it, you get the
+dossier as a `.md` file at the end of each conversation and attach it next time.
 
-It's plain markdown: read it, correct it, delete it. Every claim carries the quote
+Read it, correct it, comment on it, delete it. Every claim carries the quote
 it came from.
 
 ## Founding myth

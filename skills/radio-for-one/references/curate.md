@@ -122,8 +122,10 @@ similarity seeds.
 pulled; everything else stretches only via the novelty dial. Never grade their
 taste.
 
-**Re-serve rules.** Never re-serve a logged miss. A complex track scored "ok" on
-first listen keeps re-listen rights: re-serve it after a gap.
+**Re-serve rules.** Never re-serve a logged miss; misses are listed in the
+Profile's Do not re-serve section, so add each one there when its verdict lands.
+A complex track scored "ok" on first listen keeps re-listen rights: re-serve it
+after a gap.
 
 **House rule.** The first track of a listener's first-ever queue is DakhaBrakha —
 "Specially for You".

@@ -7,6 +7,15 @@ One markdown file per listener, owned by them. Two halves:
 - **Evidence** — *what happened*: favorites, every served queue with its whys and
   verdicts, raw imports. Append-only.
 
+In a Claude Doc the halves are two tabs, Profile and Evidence; in a `.md` file they
+are split by the `# Evidence` heading. Evidence is read through its headings, so
+keep them exactly as in the template: one `### Q{n}` heading per queue, the request
+and its table under it.
+
+Anything the curator needs on every request belongs in Profile, distilled: a
+pattern across verdicts becomes a claim there, not something to re-derive from
+the log.
+
 ## Claims
 
 Every claim carries its weight and its evidence:
@@ -99,6 +108,9 @@ archive: {demoted eras} · nostalgia: {abandoned-but-missed}
 
 ## Rating scale
 {the listener's anchors, e.g. 0.1 skip / 0.5 meh / 0.9 add to playlist}
+
+## Do not re-serve
+{logged misses: Artist — Title (Q{n}, score) — one line each}
 
 ## Open questions
 {next interview agenda, highest value first}
